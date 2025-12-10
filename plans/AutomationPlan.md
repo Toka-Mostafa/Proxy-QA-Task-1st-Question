@@ -100,8 +100,8 @@ This division ensures fast delivery, high accuracy for critical areas, and effec
 
 
 ## Automation Architecture & Folder Structure
+```
 Project/
-
    api/
    
       clients/
@@ -152,7 +152,7 @@ Project/
         workflows/
             api-tests.yml      <-- Runs API tests on every PR
             ui-tests.yml       <-- Runs UI smoke tests nightly or manually
-
+```
 
 
 ## QA Metrics Tracked in CI

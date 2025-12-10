@@ -11,6 +11,7 @@ This repository contains the QA Test Plan, Automation Plan, and pseudo-YAML CI j
 
 **Path** 
     /plans/TestPlan.md
+
 **Covers**
 - Scope & objectives
 - Acceptance criteria
@@ -23,6 +24,7 @@ This repository contains the QA Test Plan, Automation Plan, and pseudo-YAML CI j
 
 **Path** 
     /plans/AutomationPlan.md
+
 **Covers**
 - Full automation scope
 - API lifecycle tests

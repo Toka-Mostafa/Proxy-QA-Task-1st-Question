@@ -120,7 +120,6 @@ Project/
             KeyPaginationTests.java      <-- list keys (skip/limit)
             KeyActivityLogTests.java     <-- verify logs appear
 
-
    ui/
       pages/
             BasePage.java                <-- shared methods (click, type, wait)
@@ -136,13 +135,11 @@ Project/
             PaginationUITest.java
             SearchFilterUITest.java
 
-
    core/
         BaseApiTest.java           <-- Test setup, RestAssured config, base URL, token
         BaseUITest.java            <-- Selenium driver setup
         DriverFactory.java         <-- creates ChromeDriver/FirefoxDriver
         ConfigLoader.java          <-- loads environment configs
-
 
    config/
         dev.properties

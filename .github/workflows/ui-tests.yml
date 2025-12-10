@@ -1,0 +1,40 @@
+name: UI Smoke Tests (Gradle)
+
+on:
+  schedule:
+    - cron: "0 2 * * *"    # Daily at 2AM UTC
+  workflow_dispatch:
+
+jobs:
+  ui-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: "17"
+          distribution: "temurin"
+
+      - name: Cache Gradle
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle
+          key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
+      - name: Grant execute permissions
+        run: chmod +x gradlew
+
+      - name: Run UI smoke tests
+        run: ./gradlew clean test -Dgroups=ui
+
+      - name: Upload Reports & Screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: ui-artifacts
+          path: |
+            build/reports/tests/test
+            build/screenshots

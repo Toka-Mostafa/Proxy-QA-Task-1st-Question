@@ -101,22 +101,27 @@ This division ensures fast delivery, high accuracy for critical areas, and effec
 
 ## Automation Architecture & Folder Structure
 Project/
+
    api/
+   
       clients/
             KeyManagementClient.java     <-- create, update label, update pool, revoke, unrevoke
             KeyQueryClient.java          <-- list keys, get details
             KeyActivityClient.java       <-- logs only
             AuthClient.java              <-- If auth is needed 
+            
       models/
             ApiKey.java             <-- POJO for key response
             ApiKeyList.java         <-- POJO for pagination
             ActivityLogEntry.java   <-- POJO for logs
+            
       tests/
             KeyCreationTests.java        <-- create key + initial assertions
             KeyUpdateTests.java          <-- update label + update pool
             KeyRevocationTests.java      <-- revoke + unrevoke
             KeyPaginationTests.java      <-- list keys (skip/limit)
             KeyActivityLogTests.java     <-- verify logs appear
+            
    ui/
       pages/
             BasePage.java                <-- shared methods (click, type, wait)
@@ -124,21 +129,25 @@ Project/
             LoginPage.java
             KeysPage.java
             KeyDetailsPage.java
+            
       tests/
             CreateKeyUITest.java
             UpdateKeyUITest.java
             RevokeKeyUITest.java
             PaginationUITest.java
             SearchFilterUITest.java
+            
    core/
         BaseApiTest.java           <-- Test setup, RestAssured config, base URL, token
         BaseUITest.java            <-- Selenium driver setup
         DriverFactory.java         <-- creates ChromeDriver/FirefoxDriver
         ConfigLoader.java          <-- loads environment configs
+        
    config/
         dev.properties
         stage.properties
         prod.properties
+        
     .github/
         workflows/
             api-tests.yml      <-- Runs API tests on every PR

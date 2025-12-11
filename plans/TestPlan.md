@@ -100,24 +100,30 @@ The plan also focuses on:
 
 ### Test Data Strategy
 
-**Dev** Create temporary API keys and proxy pools freely for testing.
+**Dev** 
+Create temporary API keys and proxy pools freely for testing.
 Use this environment for early testing and exploratory work.
 
-**Stage** Use a dedicated QA workspace with controlled test keys. 
+**Stage** 
+Use a dedicated QA workspace with controlled test keys. 
 Validate key lifecycle, pool assignment, logs, rate limits, and whitelisting under production-like rules.
 
-**Prod** Only limited manual, non-destructive smoke tests. 
+**Prod** 
+Only limited manual, non-destructive smoke tests. 
 No creation or revocation of real customer keys.
 
 
 ### Environment Differences & Risks
 
-**Dev** Frequent deployments and unstable services may cause inconsistent results. Rate limits and whitelisting may be not fully enforced.
+**Dev** 
+Frequent deployments and unstable services may cause inconsistent results. Rate limits and whitelisting may be not fully enforced.
 
-**Stage** Must reflect real behavior, stricter IP whitelisting, rate limiting, propagation delays. 
+**Stage** 
+Must reflect real behavior, stricter IP whitelisting, rate limiting, propagation delays. 
 Issues found here are blocking for release.
 
-**Prod** Any test action risks affecting customers. Must avoid modifying API keys or generating excessive traffic. 
+**Prod** 
+Any test action risks affecting customers. Must avoid modifying API keys or generating excessive traffic. 
 Monitoring and logging need extra caution.
 
 

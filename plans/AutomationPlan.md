@@ -175,11 +175,17 @@ High flakiness reduces trust in CI,hides real bugs, and slows teams down. Flaky 
 
 ### Test Data Strategy
 
-**Dev** Automation generates and deletes API keys during runtime. Ideal for rapid CI feedback.
+**Dev** 
 
-**Stage** Automation uses predefined test keys and proxy pools stored in per-environment config files. Lifecycle tests create temporary keys when needed.
+Automation generates and deletes API keys during runtime. Ideal for rapid CI feedback.
 
-**Prod** No automated writes. CI pipelines for UI/API do not run against production to avoid impacting real users.
+**Stage** 
+
+Automation uses predefined test keys and proxy pools stored in per-environment config files. Lifecycle tests create temporary keys when needed.
+
+**Prod** 
+
+No automated writes. CI pipelines for UI/API do not run against production to avoid impacting real users.
 
 
 ### Config & Secrets
